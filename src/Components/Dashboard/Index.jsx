@@ -11,7 +11,7 @@ const Index = () => {
       <div className="homeContainer">
         <Navbar />
         <div className="hhr">
-          <h4>USERS</h4>
+          <h4>DASHBOARD</h4>
         </div>
         <div className="widgets">
           <Widgets type="user" />

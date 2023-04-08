@@ -17,8 +17,8 @@
       position: relative;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      &::after{
+      gap: 1rem; 
+         &::after{
         content:"";
         background-image: url('../../Assets/Vector.svg');
         display: inline-block;
@@ -27,5 +27,71 @@
         // position: absolute;
         background-size: 15px, 15px;
         left: 0;
+        
       }
+      
+     
     }
+    .cellAction{
+      // position: relative;
+        .dots{
+          font-size:20px;
+          cursor:pointer;
+        }
+
+        .details{
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0;
+          border: 1px solid #888;
+          width: 200px;
+          height: 200px;
+          position: absolute;
+          background: #FFFFFF;
+          border: 1px solid rgba(84, 95, 125, 0.04);
+          box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+          border-radius: 4px;          
+          list-style: none;
+          transform: translate(-12rem, 5rem);
+          display: none;
+          &.active{
+            display: block;
+          }
+          a{
+            color: #545F7D;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            line-height: 4;
+            gap: 10px;
+            padding-left: 20px; 
+            li{
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            
+          }
+
+          .ico{
+            line-height: 20px;
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+           
+          }
+
+          &:hover{
+            background-color: #545f7d6c;
+          }
+          }
+          
+
+          &:target{
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }

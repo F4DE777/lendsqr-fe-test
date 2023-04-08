@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Dashboard/Index";
 import Login from "./Components/Login/Index";
+import SignUp from "./Components/Login/SignUp";
 import NewUser from "./Components/Users/NewUser";
 import UserList from "./Components/Users/UserList";
 import ViewUser from "./Components/Users/ViewUser";
@@ -13,6 +14,7 @@ function App() {
           <Route path="/">
             <Route index element={<Login />} />
             <Route path="dashboard" element={<Home />} />
+            <Route path="sign-up" element={<SignUp />} />
             <Route path="users">
               <Route index element={<UserList />} />
               <Route path=":userId" element={<ViewUser />} />
@@ -22,14 +24,6 @@ function App() {
                 // element={<NewUser inputs={userInputs} title="Add New User" />}
               />
             </Route>
-            {/* <Route path="products">
-              <Route index element={<List />} />
-              <Route path=":productId" element={<Single />} />
-              <Route
-                path="new"
-                element={<New inputs={productInputs} title="Add New Product" />}
-              />
-            </Route> */}
           </Route>
         </Routes>
       </BrowserRouter>

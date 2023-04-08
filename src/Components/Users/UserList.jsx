@@ -3,6 +3,8 @@ import Navbar from '../Dashboard/Navbar';
 import Sidebar from '../Dashboard/Sidebar';
 // import Widgets from '../Dashboard/Widgets';
 import styled from "styled-components";
+import Widgets from '../Dashboard/Widgets';
+import TableM from '../Dashboard/TableM';
 
 const UserList = () => {
   return (
@@ -13,7 +15,15 @@ const UserList = () => {
         <div className="hhr">
           <h4>User Details</h4>
         </div>
-        
+        <div className="widgets">
+          <Widgets type="user" />
+          <Widgets type="active-user" />
+          <Widgets type="users-with-loan" />
+          <Widgets type="user-with-savings" />
+        </div>
+        <div className="listContainer">
+          <TableM />
+        </div>
       </div>
     </DashBoard>
   )

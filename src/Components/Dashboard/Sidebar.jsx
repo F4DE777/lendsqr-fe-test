@@ -19,11 +19,17 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import BrightnessLowIcon from "@mui/icons-material/BrightnessLow";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import DevicesFoldIcon from "@mui/icons-material/DevicesFold";
+import Log from "../../Assets/Union.png";
+import Logo from "../../Assets/lendsqr (1).svg";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 const Sidebar = () => {
   return (
     <SideNav>
       <div className="top">
-        <Link to={"/"} className="previous" />
+        <Link to={"/"} className="previous">
+          <img src={Log} alt="logo" />
+          <img src={Logo} alt="logo" />
+        </Link>
       </div>
       <hr />
       <div className="center">
@@ -126,27 +132,22 @@ const Sidebar = () => {
             {/* <SettingsApplicationsIcon className="icon" /> */}
             <span>Audit Logs</span>
           </li>
-          {/* <p className="title">USER</p>
           <li>
+            {/* <SettingsApplicationsIcon className="icon" /> */}
+            <span>Systems Messages</span>
+          </li>
+          <p className="title">USER</p>
+          {/* <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
-          </li>
+          </li> */}
           <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
-          </li> */}
+          </li>
         </ul>
+        <p className="version">v1.2.0</p>
       </div>
-      {/* <div className="bottom">
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "LIGHT" })}
-        ></div>
-        <div
-          className="colorOption"
-          onClick={() => dispatch({ type: "DARK" })}
-        ></div>
-      </div> */}
     </SideNav>
   );
 };
@@ -158,32 +159,26 @@ const SideNav = styled.div`
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
   background-color: white;
-
+  position: relative;
   .top {
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* .previous{
-        
 
-        &::after{
-            content: url('../../Assets/lendsqr (1).svg');
+    .previous{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      img{
+        object-fit:contain;
+        height:40px ;
 
+        &:first-child{
+          height:35px ;
         }
-        &::before{
-            
-            content:"";
-            background-image: url('../../Assets/Union.png');
-            display: inline-block;
-            width: 3rem; 
-            height: 3rem;
-            position: absolute;
-            background-size: 3rem, 3rem;
-            left: -50%;
-        }
-        
-    } */
+      }
+    }
   }
 
   hr {
@@ -245,6 +240,17 @@ const SideNav = styled.div`
       .switch {
         height: 4rem;
       }
+    }
+
+    .version {
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      position: absolute;
+      color: #213f7d;
+      bottom: 0;
     }
   }
 
