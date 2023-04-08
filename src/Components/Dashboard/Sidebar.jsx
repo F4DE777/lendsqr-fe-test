@@ -24,7 +24,7 @@ import Logo from "../../Assets/lendsqr (1).svg";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 const Sidebar = () => {
   return (
-    <SideNav>
+    <SideNav className="">
       <div className="top">
         <Link to={"/"} className="previous">
           <img src={Log} alt="logo" />
@@ -160,6 +160,16 @@ const SideNav = styled.div`
   min-height: 100vh;
   background-color: white;
   position: relative;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    left:-400px ;
+
+
+    &.active{
+      left:0 ;
+    }
+  }
   .top {
     height: 80px;
     display: flex;

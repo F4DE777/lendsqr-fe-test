@@ -142,5 +142,9 @@ const Cover = styled.div`
         }
       }
     }
+    @media (max-width: 768px) {
+      margin:0 auto;
+      padding: .125rem;
+    }
   }
 `;

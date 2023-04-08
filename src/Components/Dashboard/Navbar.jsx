@@ -4,11 +4,21 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import Avi from '../../Assets/image 4.png'
+import Avi from "../../Assets/image 4.png";
+import Log from "../../Assets/Union.png";
+import Logo from "../../Assets/lendsqr (1).svg";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <TopNav>
       <div className="wrapper">
+        <div className="top1">
+          <Link to={"/"} className="previous">
+            <img src={Log} alt="logo" />
+            <img src={Logo} alt="logo" />
+          </Link>
+        </div>
         <div className="search">
           <input type="text" placeholder="Search for anything" />
           <span>
@@ -16,7 +26,7 @@ const Navbar = () => {
           </span>
         </div>
         <div className="items">
-          <div className="item">
+          <div className="item mobile">
             <ChatBubbleOutlineOutlinedIcon className="icon" />
             <div className="counter">2</div>
           </div>
@@ -25,14 +35,10 @@ const Navbar = () => {
             <div className="counter">1</div>
           </div>
 
-          <div className="item">
-            <img
-              src={Avi}
-              alt=""
-              className="avatar"
-            />
+          <div className="item ">
+            <img src={Avi} alt="" className="avatar" />
           </div>
-          <div className="item">
+          <div className="item mobile">
             <p>Adedeji</p>
             <ArrowDropDownIcon className="icon" />
           </div>
@@ -53,7 +59,7 @@ const TopNav = styled.div`
   color: #555;
 
   .wrapper {
-    width: 90%;
+    width: 100%;
     padding: 20px;
     display: flex;
     -webkit-box-align: center;
@@ -61,7 +67,33 @@ const TopNav = styled.div`
     -webkit-box-pack: justify;
     justify-content: space-between;
     margin: 0 auto;
+    @media (max-width: 768px) {
+      width: 100vw;
+      gap: 3rem;
+      padding: 10px;
+    }
+    .top1 {
+      height: 80px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+      .previous {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        img {
+          object-fit: contain;
+          height: 40px;
 
+          &:first-child {
+            height: 35px;
+          }
+        }
+      }
+    }
     .search {
       display: flex;
       align-items: center;
@@ -69,13 +101,15 @@ const TopNav = styled.div`
       /* opacity: 0.2; */
       border: 1px solid rgb(33 63 125 / 46%);
       border-radius: 8px;
-
+      @media (max-width: 768px) {
+        display: none;
+      }
       input {
         border: none;
         outline: none;
         background: transparent;
         height: 40px;
-        width:400px;
+        width: 400px;
         &::placeholder {
           font-size: 12px;
           padding-left: 20px;
@@ -86,7 +120,7 @@ const TopNav = styled.div`
         background-color: #39cdcc;
         border-radius: 0 8px 8px 0;
         width: 40%;
-        height:40px;
+        height: 40px;
         justify-content: center;
         display: flex;
         align-items: center;
@@ -106,7 +140,11 @@ const TopNav = styled.div`
         align-items: center;
         margin-right: 20px;
         position: relative;
-
+        @media (max-width: 768px) {
+        &.mobile{
+          display:none;
+        }
+      }
         .icon {
           font-size: 40px;
         }

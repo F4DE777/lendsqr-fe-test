@@ -97,7 +97,10 @@ const Widget = styled.div`
   border-radius: 10px;
   height: 160px;
   flex-direction: column;
-
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    min-width: 150px;
+  }
   .top,
   .bottom {
     display: flex;

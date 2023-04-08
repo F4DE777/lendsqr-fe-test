@@ -421,7 +421,8 @@ const DashBoard = styled.div`
             font-size: 16px;
             line-height: 19px;
             text-align: center;
-
+            @media (max-width: 768px) {
+            }
             &.active {
               color: #39cdcc;
               border-bottom: 5px solid #39cdcc;
@@ -472,7 +473,9 @@ const DashBoard = styled.div`
             align-items: center;
             display: flex;
             position: relative;
-
+            @media (max-width: 768px) {
+              width: 190px;
+            }
             label {
               position: absolute;
               top: 0;

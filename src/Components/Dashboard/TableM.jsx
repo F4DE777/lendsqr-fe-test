@@ -8,7 +8,7 @@ import "./index.scss";
 import PersonOffIcon from '@mui/icons-material/PersonOff';
 const TableM = () => {
   const [tableData, setTableData] = useState([]);
-  const [click , setClick] = useState(false);
+  const [clickedOpt , setClickedOpt] = useState("");
 
   const columns = [
     { field: "orgName", headerName: "Organization", width: 300 },
@@ -16,7 +16,7 @@ const TableM = () => {
     { field: "email", headerName: "Email", width: 300 },
     { field: "phoneNumber", headerName: "Phone Number", width: 300 },
     { field: "createdAt", headerName: "Date Joined", width: 300 },
-    { field: "status", headerName: "Status" },
+    // { field: "status", headerName: "Status" },
     // { field: "dots", headerName: "" },
   ];
   useEffect(() => {
@@ -24,17 +24,28 @@ const TableM = () => {
       .then((data) => data.json())
       .then((data) => setTableData(data));
   }, []);
-  const handleClick = () => setClick(!click)
+  const handleClick = (id) => setClickedOpt(id)
   const actionColumn = [
-    {
-      field: "action",
-      headerName: "",
+   {
+      field: "status",
+      headerName: "Status",
       width: 50,
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <MoreVertIcon  onClick={handleClick}/>
-            <ul  className={click ? "details active" : "details"}>
+           
+          </div>
+        );
+      },
+    }, {
+      field: "action",
+      headerName: "",
+      width: 20,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+            <MoreVertIcon  onClick={() => handleClick(params.id)}/>
+            <ul  className={clickedOpt === params.id ? "details active" : "details"}>
               <Link to={`/users/${params.id}`}>
                 <RemoveRedEyeIcon className="ico" />
                 <li>View Details</li>

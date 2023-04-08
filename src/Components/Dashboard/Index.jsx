@@ -34,6 +34,8 @@ const DashBoard = styled.div`
 
   .homeContainer {
     flex: 6;
+    position: relative;
+    overflow: hidden;
     .hhr {
       margin: 1rem 2rem;
       h4 {
@@ -46,15 +48,13 @@ const DashBoard = styled.div`
         color: #213f7d;
       }
     }
-    .widgets,
-    .charts {
+    .widgets {
       display: flex;
+      flex-wrap: wrap;
       padding: 20px;
       gap: 20px;
-    }
-
-    .charts {
-      padding: 5px 20px;
+      width: 100%;
+      overflow: hidden;
     }
 
     .listContainer {
@@ -62,6 +62,10 @@ const DashBoard = styled.div`
       box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
       padding: 20px;
       margin: 20px;
+      @media (max-width: 768px) {
+        width: 100vw;
+        overflow: scroll;
+      }
 
       .listTitle {
         font-weight: 500;
