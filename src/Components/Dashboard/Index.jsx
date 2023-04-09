@@ -38,6 +38,9 @@ const DashBoard = styled.div`
     overflow: hidden;
     .hhr {
       margin: 1rem 2rem;
+      @media (max-width: 768px) {
+        margin: 1rem 4rem;
+      }
       h4 {
         font-family: "Work Sans";
         font-style: normal;
@@ -65,6 +68,7 @@ const DashBoard = styled.div`
       @media (max-width: 768px) {
         width: 100vw;
         overflow: scroll;
+        margin: 0;
       }
 
       .listTitle {

@@ -29,18 +29,22 @@ const TableM = () => {
    {
       field: "status",
       headerName: "Status",
-      width: 50,
-      renderCell: (params) => {
+      width: 200,
+      renderCell: () => {
         return (
           <div className="cellAction">
-           
+            <ul className="status">
+              <li className="active">Active</li>
+              {/* <li className="inactive">Inactive</li>
+              <li className="blacklisted">Blacklisted</li> */}
+            </ul>
           </div>
         );
       },
     }, {
       field: "action",
       headerName: "",
-      width: 20,
+      width: 50,
       renderCell: (params) => {
         return (
           <div className="cellAction">
@@ -67,7 +71,7 @@ const TableM = () => {
   return (
     <div style={{ height: 700, width: "100%" }}>
       <DataGrid
-        style={{ color: "#213F7D !important" }}
+        style={{ color: "#213F7D !important" , zIndex:1,}}
         rows={tableData}
         columns={columns.concat(actionColumn)}
         rowsPerPageOptions={[10]}

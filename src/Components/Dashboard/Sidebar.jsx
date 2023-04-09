@@ -22,14 +22,23 @@ import DevicesFoldIcon from "@mui/icons-material/DevicesFold";
 import Log from "../../Assets/Union.png";
 import Logo from "../../Assets/lendsqr (1).svg";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import React, { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 const Sidebar = () => {
+  const [click, setClick] = useState("");
+  const handleClick = () => setClick(!click);
+
   return (
-    <SideNav className="">
+    <SideNav className={click ? "active" : " "}>
       <div className="top">
         <Link to={"/"} className="previous">
           <img src={Log} alt="logo" />
           <img src={Logo} alt="logo" />
         </Link>
+      </div>
+      <div className="menu-icon" onClick={handleClick}>
+        {click ? <CloseIcon /> : <MenuIcon />}{" "}
       </div>
       <hr />
       <div className="center">
@@ -52,12 +61,10 @@ const Sidebar = () => {
               <span>Users</span>
             </li>
           </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
-            <li>
-              <GroupsIcon className="icon" />
-              <span>Guarantors</span>
-            </li>
-          </Link>
+          <li>
+            <GroupsIcon className="icon" />
+            <span>Guarantors</span>
+          </li>
           <li>
             <PaidIcon className="icon" />
             <span>Loans</span>
@@ -158,16 +165,18 @@ const SideNav = styled.div`
   flex: 1;
   border-right: 0.5px solid rgb(230, 227, 227);
   min-height: 100vh;
-  background-color: white;
+  background-color: #fff;
   position: relative;
+  z-index: 999;
+  transition: all 8.5s linear ease-in;
 
   @media (max-width: 768px) {
     position: absolute;
-    left:-400px ;
+    left: -240px;
+    transition: all 8.5s linear ease-in;
 
-
-    &.active{
-      left:0 ;
+    &.active {
+      left: 0;
     }
   }
   .top {
@@ -176,21 +185,44 @@ const SideNav = styled.div`
     align-items: center;
     justify-content: center;
 
-    .previous{
-      display:flex;
-      gap:1rem;
-      align-items:center;
-      img{
-        object-fit:contain;
-        height:40px ;
+    .previous {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      img {
+        object-fit: contain;
+        height: 40px;
 
-        &:first-child{
-          height:35px ;
+        &:first-child {
+          height: 35px;
         }
       }
     }
   }
+  .menu-icon {
+    position: absolute;
+    display: none;
 
+    width: 70px;
+    height: 50px;
+    background-color: rgb(57 205 204 / 57%);
+    right: -50px;
+    z-index: -1;
+    @media (max-width: 768px) {
+      display: block;
+    }
+    svg {
+      font-size: 50px;
+      color: #042482;
+      transition: all 1.5ms linear;
+      /* transform: translate(-29px, 17px); */
+      z-index: 1;
+      position: relative;
+      float: right;
+      padding: 5px;
+      border-radius: 50%;
+    }
+  }
   hr {
     height: 0;
     border: 0.5px solid rgb(230, 227, 227);
@@ -198,7 +230,8 @@ const SideNav = styled.div`
 
   .center {
     padding-left: 10px;
-
+    background-color: #fff;
+    z-index: 999;
     ul {
       list-style: none;
       margin: 0;

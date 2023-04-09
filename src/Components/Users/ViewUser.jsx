@@ -251,7 +251,8 @@ const DashBoard = styled.div`
 
   .homeContainer {
     flex: 6;
-
+    position: relative;
+    overflow: hidden;
     .previous {
       position: relative;
       display: flex;
@@ -289,6 +290,8 @@ const DashBoard = styled.div`
       margin: 1rem 2rem;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+
       h4 {
         font-family: "Work Sans";
         font-style: normal;
@@ -343,6 +346,11 @@ const DashBoard = styled.div`
         border-radius: 4px;
         padding: 20px;
         position: relative;
+        @media (max-width: 768px) {
+          height: auto;
+          padding: 0px;
+
+        }
 
         .item {
           display: flex;
@@ -359,6 +367,11 @@ const DashBoard = styled.div`
             display: flex;
             gap: 5rem;
             align-items: center;
+            flex-wrap:wrap;
+            @media (max-width: 768px) {
+              gap: 1rem;
+
+            }
             .itemTitle {
               margin-bottom: 10px;
               color: #555;
@@ -413,7 +426,10 @@ const DashBoard = styled.div`
           bottom: 0;
           width: 95%;
           margin: 0 auto;
+          @media (max-width: 768px) {
+            display: none;
 
+          }
           li {
             font-family: "Work Sans";
             font-style: normal;
@@ -444,7 +460,9 @@ const DashBoard = styled.div`
       border-radius: 4px;
       padding: 20px;
       margin: 10px 20px;
-
+      @media (max-width: 768px) {
+        padding: 10px;
+      }
       .pInfo {
         border-bottom: 1px solid rgb(33 63 125 / 20%);
         .title {
@@ -474,7 +492,8 @@ const DashBoard = styled.div`
             display: flex;
             position: relative;
             @media (max-width: 768px) {
-              width: 190px;
+              width: 160px;
+              overflow:hidden;
             }
             label {
               position: absolute;

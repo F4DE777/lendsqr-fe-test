@@ -39,6 +39,39 @@
           cursor:pointer;
         }
 
+        .status{
+         
+          padding: 0;
+          list-style: none;
+
+          li{
+            border-radius: 100px;
+            height: 30px;
+            padding: 20px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            &.active{
+              color: #39CD62;
+              background-color: #39cd634b;
+            }
+            &.inactive{
+              color: #545F7D;
+              background-color: #545f7d44;
+            } &.blacklisted{
+              color: #E4033B;
+              background-color: #e4033b3c;
+            }
+          }
+         
+        }
+
         .details{
           background-color: #fefefe;
           margin: auto;
@@ -52,10 +85,13 @@
           box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
           border-radius: 4px;          
           list-style: none;
-          transform: translate(-12rem, 5rem);
+          transform: translate(-12rem, -1rem);
           display: none;
+          transition: all 2.5s linear ease;
+
           &.active{
             display: block;
+      
           }
           a{
             color: #545F7D;

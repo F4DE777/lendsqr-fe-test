@@ -26,13 +26,13 @@ const Login = () => {
                 name="password"
                 placeholder="Password"
               />
-              <Link className="f-pass" to={"/forgot-password"}>
+              <Link className="f-pass" >
                 Forgot Password
               </Link>
             </div>
-            <button className="form-input-btn" type="submit">
+            <Link  to={"/dashboard"} className="form-input-btn" type="submit">
               Log in
-            </button>
+            </Link>
             <span className="form-input-login">
               Don’t have an account? <Link to="/sign-up">Sign up</Link>
             </span>
@@ -121,7 +121,12 @@ const Cover = styled.div`
         border: 1px solid #39cdcc;
         opacity: 1;
         color: #fff;
-        font: normal normal 600 19px/27px;
+        font: normal normal 600 22px/27px;
+        text-align:center;
+        align-items:center;
+        display:flex;
+        justify-content:center;
+        text-decoration:none;
       }
 
       .form-input-login {
