@@ -36,6 +36,8 @@ const DashBoard = styled.div`
 
   .homeContainer {
     flex: 6;
+    position: relative;
+    overflow: hidden;
     .hhr {
       margin: 1rem 2rem;
       @media (max-width: 768px) {
